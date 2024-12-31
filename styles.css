@@ -1,0 +1,243 @@
+/* General Styles */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: white;
+  text-align: center;
+  background: #000; /* Fallback background color */
+}
+
+/* Hero Section */
+#hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: url("/src/assets/HEROBG.jpg") no-repeat center center/cover;
+}
+
+/* Blurred Background Overlay */
+#hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3); /* Semi-transparent overlay */
+  backdrop-filter: blur(1px); /* Blur the background */
+  z-index: 1;
+}
+
+/* Vignette Effect */
+.vignette {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle,
+    transparent 30%,
+    rgba(0, 0, 0, 0.8) 150%
+  ); /* Stronger vignette */
+  pointer-events: none; /* Ensures it doesn't interfere with clicks */
+  z-index: 2;
+}
+
+/* Calendar Design */
+.calendar-design {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  border-radius: 15px;
+  backdrop-filter: blur(5px); /* Reduced blur */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  max-width: 600px; /* Smaller width */
+  z-index: 3; /* Ensures it's above the vignette and blur overlay */
+}
+
+.calendar-design h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.calendar-design .subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Countdown Timer */
+#countdown {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+#countdown div {
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(3px); /* Reduced blur */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#countdown div:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+#countdown span {
+  font-size: 2rem;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.calendar-design .message {
+  font-size: 1rem;
+  margin-top: 1.5rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.5;
+}
+
+/* Celebration Message Styles */
+#countdown h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #ffd700; /* Gold color for celebration */
+  text-transform: uppercase;
+}
+
+#countdown p {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Goodbye 2024 Section */
+/* General Styles */
+body {
+  font-family: "Poppins", sans-serif; /* Modern, elegant font */
+  color: white;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background: #000; /* Fallback background color */
+}
+
+/* Goodbye 2024 Section */
+#goodbye-2024 {
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  height: 100vh; /* Full viewport height */
+  background: radial-gradient(
+      circle at center,
+      rgba(40, 38, 59, 0.8),
+      rgba(0, 0, 0, 1)
+    ),
+    url("/src/assets/2024-bg.jpg") no-repeat center center/cover;
+}
+
+#goodbye-2024 h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  z-index: 2;
+  position: relative;
+}
+
+#image-grid {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+#image-grid img {
+  position: absolute;
+  opacity: 0;
+  border-radius: 10px;
+  animation: fadeInOut 6s infinite ease-in-out;
+}
+
+@keyframes fadeInOut {
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  25%,
+  75% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+/* Footer Section */
+footer {
+  background: rgba(0, 0, 0, 0.9);
+  padding: 1rem;
+  text-align: center;
+  width: 100%; /* Ensures footer spans the full width */
+}
+
+.social-media {
+  margin-bottom: 1rem;
+}
+
+.social-media a {
+  margin: 0 10px;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.social-media a:hover {
+  transform: translateY(-5px);
+}
+
+/* Facebook and Instagram icons smaller */
+.social-media a img[alt="Facebook"],
+.social-media a img[alt="Instagram"] {
+  width: 30px; /* Smaller size */
+  height: 30px; /* Smaller size */
+}
+
+/* Twitter icon remains the same size */
+.social-media a img[alt="Twitter"] {
+  width: 32px; /* Original size */
+  height: 32px; /* Original size */
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+footer a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #fff;
+}
