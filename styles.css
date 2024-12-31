@@ -22,7 +22,7 @@ body {
   justify-content: center;
   align-items: center;
   position: relative;
-  background: url("/src/assets/HEROBG.jpg") no-repeat center center/cover;
+  background: url("./src/assets/HEROBG.jpg") no-repeat center center/cover;
 }
 
 /* Blurred Background Overlay */
@@ -153,7 +153,7 @@ body {
       rgba(40, 38, 59, 0.8),
       rgba(0, 0, 0, 1)
     ),
-    url("/src/assets/2024-bg.jpg") no-repeat center center/cover;
+    url("./src/assets/2024-bg.jpg") no-repeat center center/cover;
 }
 
 #goodbye-2024 h2 {
