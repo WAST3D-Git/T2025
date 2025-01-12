@@ -1,4 +1,3 @@
-// Countdown Timer
 const countdown = () => {
   const targetDate = new Date("January 1, 2025 00:00:00").getTime();
   const now = new Date().getTime();
@@ -7,16 +6,33 @@ const countdown = () => {
   if (timeLeft <= 0) {
     // Countdown is over
     clearInterval(interval);
-    document.getElementById("countdown").innerHTML = `
+    const calendarDesign = document.querySelector(".calendar-design");
+
+    // Clear the text content of the specific elements
+    calendarDesign.querySelector("h1").textContent = "";
+    calendarDesign.querySelector(".subtitle").textContent = "";
+    calendarDesign.querySelector(".message").textContent = "";
+
+    // Update the countdown div with the new centered text
+    const countdownElement = document.getElementById("countdown");
+    countdownElement.innerHTML = `
       <h2>Happy New Year 2025!</h2>
       <p>Wishing you a year full of joy, success, and happiness!</p>
     `;
+    countdownElement.style.display = "flex";
+    countdownElement.style.justifyContent = "center";
+    countdownElement.style.alignItems = "center";
+    countdownElement.style.textAlign = "center";
+    countdownElement.style.width = "100%";
+    countdownElement.style.height = "100%";
+
     // Trigger confetti animation
     confetti({
       particleCount: 100,
       spread: 70,
       origin: { y: 0.6 },
     });
+
     // Keep the confetti going for a few seconds
     const duration = 5 * 1000; // 5 seconds
     const end = Date.now() + duration;
@@ -59,26 +75,26 @@ const interval = setInterval(countdown, 1000);
 
 // Goodbye 2024 Section
 const images = [
-  "./src/assets/2024-1.jpg",
-  "./src/assets/2024-2.jpg",
-  "./src/assets/2024-3.jpg",
-  "./src/assets/2024-4.jpg",
-  "./src/assets/2024-5.jpg",
-  "./src/assets/2024-6.jpg",
-  "./src/assets/2024-7.jpg",
-  "./src/assets/2024-8.jpg",
-  "./src/assets/2024-9.jpg",
-  "./src/assets/2024-10.jpg",
-  "./src/assets/2024-11.jpg",
-  "./src/assets/2024-12.png",
-  "./src/assets/2024-13.png",
-  "./src/assets/2024-14.png",
-  "./src/assets/2024-15.png",
-  "./src/assets/2024-16.png",
-  "./src/assets/2024-17.png",
-  "./src/assets/2024-18.png",
-  "./src/assets/2024-19.png",
-  "./src/assets/2024-20.jpg",
+  "/src/assets/2024-1.jpg",
+  "/src/assets/2024-2.jpg",
+  "/src/assets/2024-3.jpg",
+  "/src/assets/2024-4.jpg",
+  "/src/assets/2024-5.jpg",
+  "/src/assets/2024-6.jpg",
+  "/src/assets/2024-7.jpg",
+  "/src/assets/2024-8.jpg",
+  "/src/assets/2024-9.jpg",
+  "/src/assets/2024-10.jpg",
+  "/src/assets/2024-11.jpg",
+  "/src/assets/2024-12.png",
+  "/src/assets/2024-13.png",
+  "/src/assets/2024-14.png",
+  "/src/assets/2024-15.png",
+  "/src/assets/2024-16.png",
+  "/src/assets/2024-17.png",
+  "/src/assets/2024-18.png",
+  "/src/assets/2024-19.png",
+  "/src/assets/2024-20.jpg",
 ];
 
 const imageGrid = document.getElementById("image-grid");
